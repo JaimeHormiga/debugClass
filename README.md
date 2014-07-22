@@ -1,5 +1,5 @@
 
-#DebugClass ver 0.9.1 Timestamp 281113
+DebugClass ver 0.9.1 Timestamp 281113
 
 Autor: Jaime Hormiga - www.jaimeweb.es
 
@@ -33,7 +33,7 @@ Existen dos formas no excluyentes de cambiar el estilo de los paneles creados:
 
 2. Editando el archivo 'debugClass.js' y cambiando la seccion:
 
-,,,
+ ```
 //Propiedades CSS del Panel
     //--------------------------
     this.anchura = "99%";
@@ -45,5 +45,5 @@ Existen dos formas no excluyentes de cambiar el estilo de los paneles creados:
     this.pclases = ""; //clases por defecto para el panel
     this.bclases = ""; //clases extra para el boton
     //--------------------------
-,,,
+ ```
 
