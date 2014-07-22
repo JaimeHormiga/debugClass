@@ -1,0 +1,66 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo de uso DebugClass</title>
+    <style type="text/css">
+        body {
+            background-color: #444;
+            color: white;
+        }
+        #contenido {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        #formu{
+            width: 50%;
+            margin: 8px auto;
+        }
+
+        textarea{
+            width: 100%;
+            height: 150px;
+        }
+        .maquetaBoton{
+            width: 120px;
+            margin: 5px auto;
+        }
+    </style>
+    <script type="text/javascript" src="debugClass.js"></script>
+    <script type="text/javascript">
+
+
+        window.onload = function(){
+            //Creo el panel en el div 'contenido'
+            var ejemplo = new debugPanel("contenido","debug");
+            //Coloco el boton en el div 'contenido'
+           ejemplo.boton("contenido");
+           //A&ntilde;ado una clase al boton para maquetarlo
+           ejemplo.addClase("maquetaBoton",1);
+
+           //Esto es para que funcione el formulario del ejemplo
+           //no tiene que ver con debugClass
+           document.getElementById('escribir').onclick = function (){
+                var texto = document.getElementById('texto');
+                ejemplo.mostrarMensaje(texto.value,0);
+                texto.value = "";
+           }
+           document.getElementById('borrar').onclick = function (){
+                ejemplo.mostrarMensaje('',1);
+           }
+        }
+    </script>
+</head>
+<body>
+    <div id="contenido">
+    </div>
+    <div id="formu">
+        <form>
+            <p>Escribe aqui para a&ntilde;adir al panel:</p>
+            <textarea id="texto"></textarea>
+            <input type="button" name="bescribir" value="Escribir" id="escribir">
+            <input type="button" name="blimpiar" value="borrar" id="borrar">
+        </form>
+    </div>
+</body>
+</html>
